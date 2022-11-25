@@ -3,11 +3,10 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
 import chroma from "chroma-js";
 import { withStyles } from "@mui/styles";
-
 import "./ColorBox.css";
 
 const styles = {
-  ColorBox: {
+  colorBox: {
     width: "20%",
     height: (props) => (props.showingFullPalette ? "25%" : "50%"),
     margin: "0 auto",
@@ -144,7 +143,7 @@ class ColorBox extends Component {
     const { copied } = this.state;
     return (
       <CopyToClipboard text={background} onCopy={this.changeCopyState}>
-        <div style={{ background }} className={classes.ColorBox}>
+        <div style={{ background }} className={classes.colorBox}>
           <div
             style={{ background }}
             className={`${classes.copyOverlay} ${
@@ -168,7 +167,7 @@ class ColorBox extends Component {
           {showingFullPalette && (
             <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
               {/* stopPropagation--->to stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed */}
-              <span className={classes.seeMore}>More</span>
+              <span className={classes.seeMore}>MORE</span>
             </Link>
           )}
         </div>
